@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoViewController" customModule="VideoTrimmer" customModuleProvider="target">
             <connections>
+                <outlet property="muteButton" destination="gRM-w1-14l" id="UGu-NO-lIs"/>
+                <outlet property="playPauseButton" destination="rLz-Yf-MMp" id="LTl-B4-ZFH"/>
                 <outlet property="progressSlider" destination="Kwh-DT-587" id="eW4-eA-TZd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,17 +24,37 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kwh-DT-587">
-                    <rect key="frame" x="58" y="393" width="269" height="31"/>
+                    <rect key="frame" x="73" y="470" width="229" height="31"/>
                     <connections>
                         <action selector="sliderChanged:forEvent:" destination="-1" eventType="valueChanged" id="VaD-CI-Psr"/>
                     </connections>
                 </slider>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLz-Yf-MMp">
+                    <rect key="frame" x="0.0" y="470" width="75" height="30"/>
+                    <state key="normal" title="Pause"/>
+                    <connections>
+                        <action selector="togglePlay:" destination="-1" eventType="touchUpInside" id="yuR-bA-Rgg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRM-w1-14l">
+                    <rect key="frame" x="300" y="470" width="75" height="30"/>
+                    <state key="normal" title="Mute"/>
+                    <connections>
+                        <action selector="toggleMute:" destination="-1" eventType="touchUpInside" id="yeH-1e-r6l"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Kwh-DT-587" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="373" id="EfT-pc-iPT"/>
-                <constraint firstItem="Kwh-DT-587" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="mmm-Ud-swL"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Kwh-DT-587" secondAttribute="trailing" constant="50" id="yZj-uV-1kE"/>
+                <constraint firstItem="Kwh-DT-587" firstAttribute="leading" secondItem="rLz-Yf-MMp" secondAttribute="trailing" id="28m-Rf-IIP"/>
+                <constraint firstItem="rLz-Yf-MMp" firstAttribute="centerY" secondItem="Kwh-DT-587" secondAttribute="centerY" id="EI1-n4-jzz"/>
+                <constraint firstItem="Kwh-DT-587" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="450" id="EfT-pc-iPT"/>
+                <constraint firstItem="gRM-w1-14l" firstAttribute="centerY" secondItem="Kwh-DT-587" secondAttribute="centerY" id="O5Y-kV-3Pk"/>
+                <constraint firstItem="rLz-Yf-MMp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ynb-Zp-R9F"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gRM-w1-14l" secondAttribute="trailing" id="jii-Er-cys"/>
+                <constraint firstItem="Kwh-DT-587" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="75" id="mmm-Ud-swL"/>
+                <constraint firstItem="gRM-w1-14l" firstAttribute="leading" secondItem="Kwh-DT-587" secondAttribute="trailing" id="snO-6h-ufE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Kwh-DT-587" secondAttribute="trailing" constant="75" id="yZj-uV-1kE"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

@@ -39,7 +39,13 @@
                             <outlet property="delegate" destination="PQw-4x-77O" id="ZFp-sQ-tK1"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Videos" id="bg3-Bs-42J"/>
+                    <navigationItem key="navigationItem" title="Videos" id="bg3-Bs-42J">
+                        <barButtonItem key="rightBarButtonItem" title="HLS" id="I1E-XS-vbe">
+                            <connections>
+                                <action selector="showHLSDemo:" destination="PQw-4x-77O" id="oZS-9O-qxc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JV6-Mk-l2W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

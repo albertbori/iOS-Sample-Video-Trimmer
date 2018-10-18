@@ -29,7 +29,14 @@ class VideosCollectionViewController: UICollectionViewController {
         
         checkPhotoLibraryPermissions()
     }
-
+    
+    @IBAction func showHLSDemo(_ sender: Any) {
+        let vc = VideoViewController()
+        vc.videoUrl = URL(string: "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8")
+//        vc.videoUrl = URL(string: "http://yt-dash-mse-test.commondatastorage.googleapis.com/media/car-20120827-manifest.mpd") DASH doesn't work LOL @ Apple
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
